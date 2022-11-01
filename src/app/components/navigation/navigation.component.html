@@ -1,0 +1,67 @@
+<div class="bg-gray-200 flex items-center justify-between px-4 py-2 box-shadow">
+
+    <!-- Logo and Name of the company-->
+    <span class="grid grid-flow-col auto-cols-max items-center gap-3 ">
+
+        <img class="w-[75px] select-none" src="assets/Logo.png">
+
+        <h2 class="text-lg font-semibold leading-tight">
+            Apparatus <br />Manufacturers Group LLC
+        </h2>
+    </span>
+
+    <span>
+        <a routerLink="/" class="mr-2">Products</a>
+        <a routerLink="/about">About</a>
+    </span>
+
+    <span>
+        <button 
+            class="mr-2"
+            (click)="modalService.open()"
+        >
+            Login
+        </button>
+
+        <a routerLink="/about">Checkout</a>
+    </span>
+    
+</div>
+
+
+<app-modal
+    title="Login"
+    *ngIf="modalService.isVisible$ | async"
+> 
+    <div class="flex justify-around mb-5">
+        <button
+            class="font-bold transition-all"
+            [ngClass]="{
+                'text-blue-400 underline underline-offset-8': !isSwitched,
+                'text-gray-400': isSwitched
+            }"
+            (click)="isSwitched = false"
+        >
+            Login
+        </button>
+        <button
+            class="font-bold"
+            [ngClass]="{
+                'text-blue-400 underline underline-offset-8': isSwitched,
+                'text-gray-400': !isSwitched
+            }"
+            (click)="isSwitched = true"
+        >
+            Sign Up
+        </button>
+    </div>
+    
+
+    <app-login    
+        *ngIf="!isSwitched">
+    </app-login>
+
+    <app-registration
+        *ngIf="isSwitched">
+    </app-registration>
+</app-modal>

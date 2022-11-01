@@ -1,0 +1,21 @@
+<div
+    class="bg-black/40 fixed top-0 right-0 left-0 bottom-0"
+    (click)="modalService.close()"
+></div>
+
+<div 
+    class="w-[500px] absolute top-16 rounded bg-white left-1/2 -translate-x-1/2 box-shadow"
+>
+    <div class="modal-header text-2xl text-center mt-5 font-bold font-roboto text-blue-500 flex flex-col items-center">
+        <img class="w-[80px]" src="/assets/Logo.png">
+        <span class="mt-1 drop-shadow-lg">Apparatus</span>
+    </div>
+
+    <div class="px-6 pt-3 pb-6">
+       
+        <!-- <h1 class="text-center mb-2 text-lg">{{ title | titlecase}}</h1> -->
+    
+        <ng-content></ng-content>
+    </div>
+    
+</div>
