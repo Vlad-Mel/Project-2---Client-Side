@@ -16,8 +16,6 @@ export class LoginComponent implements OnInit {
     ]),
     password: new FormControl<string>('', [
       Validators.required
-      // /* Regex requires at least 6 symbols, lowercase, uppercase, and a digit*/
-      // Validators.pattern('/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[A-Za-z\d]{6,}$/')
     ])
   })
 

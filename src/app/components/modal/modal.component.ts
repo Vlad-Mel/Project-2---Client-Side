@@ -8,7 +8,7 @@ import { ModalService } from 'src/app/services/modal.service';
 })
 export class ModalComponent implements OnInit {
 
-  @Input() title:string = "";
+  @Input() showLogo = false;
 
   constructor(public modalService: ModalService) { }
 

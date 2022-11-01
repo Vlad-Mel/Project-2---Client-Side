@@ -15,7 +15,7 @@
         <a routerLink="/about">About</a>
     </span>
 
-    <span>
+    <span class="flex">
         <button 
             class="mr-2"
             (click)="modalService.open()"
@@ -23,19 +23,21 @@
             Login
         </button>
 
-        <a routerLink="/about">Checkout</a>
+        <a class="relative cart" routerLink="/about">
+            <img class="w-[45px]" src="/assets/icons/cart_icon.png">
+        </a>
     </span>
     
 </div>
 
 
 <app-modal
-    title="Login"
+    [showLogo]="true"
     *ngIf="modalService.isVisible$ | async"
 > 
     <div class="flex justify-around mb-5">
         <button
-            class="font-bold transition-all"
+            class="font-semibold tracking-wide"
             [ngClass]="{
                 'text-blue-400 underline underline-offset-8': !isSwitched,
                 'text-gray-400': isSwitched
@@ -45,7 +47,7 @@
             Login
         </button>
         <button
-            class="font-bold"
+            class="font-semibold tracking-wide"
             [ngClass]="{
                 'text-blue-400 underline underline-offset-8': isSwitched,
                 'text-gray-400': !isSwitched

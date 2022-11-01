@@ -6,12 +6,20 @@
 <div 
     class="w-[500px] absolute top-16 rounded bg-white left-1/2 -translate-x-1/2 box-shadow"
 >
-    <div class="modal-header text-2xl text-center mt-5 font-bold font-roboto text-blue-500 flex flex-col items-center">
+    <div class="modal-header text-2xl text-center mt-5 font-bold font-roboto text-blue-500 flex flex-col items-center"
+        *ngIf="showLogo"
+    >
         <img class="w-[80px]" src="/assets/Logo.png">
-        <span class="mt-1 drop-shadow-lg">Apparatus</span>
+        <span class="mt-1 drop-shadow-lg tracking-wide">Apparatus</span>
     </div>
 
-    <div class="px-6 pt-3 pb-6">
+    <div 
+        class="px-6 pt-3 pb-6"
+        [ngClass]="{
+            'pt-6': !showLogo,
+            'pt-3': showLogo
+        }"
+    >
        
         <!-- <h1 class="text-center mb-2 text-lg">{{ title | titlecase}}</h1> -->
     
