@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { ILogin, IUser } from '../models/user';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { ILogin, IUser, IUserRegistration } from '../models/user';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 
@@ -13,10 +13,14 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   login(login: ILogin): Observable<IUser> {
-    return this.http.post<IUser>(this.url + "/login", login)
+    return this.http.post<IUser>(`${this.url}/login`, login, { withCredentials: true})
   }
 
-  createUser() {
+  createUser(registration: IUserRegistration) {
+    return this.http.post<IUserRegistration>(`${this.url}/registration`, registration);
+  }
 
+  logout() {
+    return this.http.get(`${this.url}/logout`, { withCredentials: true}).subscribe(res => console.log(res));
   }
 }

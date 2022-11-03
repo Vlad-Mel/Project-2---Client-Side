@@ -9,7 +9,7 @@
     <div class="modal-header text-2xl text-center mt-5 font-bold font-roboto text-blue-500 flex flex-col items-center"
         *ngIf="showLogo"
     >
-        <img class="w-[80px]" src="/assets/Logo.png">
+        <img class="w-[80px]" src="/assets/Logo.png" alt="Logo">
         <span class="mt-1 drop-shadow-lg tracking-wide">Apparatus</span>
     </div>
 
@@ -20,8 +20,6 @@
             'pt-3': showLogo
         }"
     >
-       
-        <!-- <h1 class="text-center mb-2 text-lg">{{ title | titlecase}}</h1> -->
     
         <ng-content></ng-content>
     </div>

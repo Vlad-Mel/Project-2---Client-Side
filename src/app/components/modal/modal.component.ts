@@ -10,7 +10,7 @@ export class ModalComponent implements OnInit {
 
   @Input() showLogo = false;
 
-  constructor(public modalService: ModalService) { }
+  constructor(public modalService: ModalService){}
 
   ngOnInit(): void {
   }

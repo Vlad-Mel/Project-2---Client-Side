@@ -10,6 +10,7 @@ export class RegistrationComponent implements OnInit {
 
   constructor(private userService: UserService) { }
 
+
   form = new FormGroup({
     firstName: new FormControl<string>('', [
       Validators.required
@@ -25,15 +26,24 @@ export class RegistrationComponent implements OnInit {
       Validators.required,
       /* Regex requires at least 6 symbols, lowercase, uppercase, and a digit */
       Validators.pattern('/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[A-Za-z\d]{6,}$/')
-    ]) 
-
+    ]),
+    retypedPassword: new FormControl<string>('', [
+      Validators.required
+    ])
   })
 
   ngOnInit(): void {
   }
 
   submit() {
-    
+    this.userService.createUser({
+      firstName: this.form.value.firstName as string,
+      lastName: this.form.value.lastName as string,
+      email: this.form.value.lastName as string,
+      password: this.form.value.password as string
+    }).subscribe(response => {
+      console.log(response);
+    })
   }
 
 }

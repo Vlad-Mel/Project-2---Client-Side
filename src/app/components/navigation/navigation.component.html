@@ -3,7 +3,7 @@
     <!-- Logo and Name of the company-->
     <span class="grid grid-flow-col auto-cols-max items-center gap-3 ">
 
-        <img class="w-[75px] select-none" src="assets/Logo.png">
+        <img class="w-[75px] select-none" src="assets/Logo.png" alt="Logo">
 
         <h2 class="text-lg font-semibold leading-tight">
             Apparatus <br />Manufacturers Group LLC
@@ -14,7 +14,7 @@
         <a routerLink="/" class="mr-2">Products</a>
         <a routerLink="/about">About</a>
     </span>
-
+`
     <span class="flex">
         <button 
             class="mr-2"
@@ -23,8 +23,14 @@
             Login
         </button>
 
+        <button
+            (click)="userService.logout()"
+        >
+            Logout
+        </button>
+
         <a class="relative cart" routerLink="/about">
-            <img class="w-[45px]" src="/assets/icons/cart_icon.png">
+            <img class="w-[45px]" src="/assets/icons/cart_icon.png" alt="Cart">
         </a>
     </span>
     

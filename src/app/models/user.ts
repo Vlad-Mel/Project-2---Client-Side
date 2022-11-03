@@ -10,3 +10,10 @@ export interface IUser {
     salt: number[]
 }
 
+export interface IUserRegistration {
+    firstName: string,
+    lastName: string,
+    email: string,
+    password: string
+}
+

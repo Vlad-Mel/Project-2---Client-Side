@@ -23,8 +23,9 @@ export class LoginComponent implements OnInit {
     this.userService.login({
       username: this.form.value.username as string,
       password: this.form.value.password as string
-    }).subscribe( user => {
-      console.log(user)
+    }).subscribe( response => {
+
+      console.log(response)
     })
     console.log(this.form.value)
   }

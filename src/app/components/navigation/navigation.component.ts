@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { ModalService } from "src/app/services/modal.service";
+import { UserService } from "src/app/services/user.service";
 
 @Component({
     selector: "app-navigation",
@@ -10,7 +11,7 @@ class NavigationComponent {
 
     isSwitched = false;
 
-    constructor(public modalService: ModalService) {}
+    constructor(public modalService: ModalService, public userService: UserService) {}
 
 
 }
