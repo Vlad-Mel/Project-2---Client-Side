@@ -41,7 +41,6 @@ export class RegistrationComponent {
 
     if (this.form.value.password === this.form.value.retypedPassword) {
       Object.keys(this.formError).forEach( key => { this.formError[key] = false;})
-      console.log("hello")
 
       this.userService.createUser({
         firstName: this.form.value.firstName as string,
