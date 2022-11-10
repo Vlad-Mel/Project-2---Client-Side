@@ -1,0 +1,22 @@
+.profile-form::after {
+    content: "Basic Information";
+    padding-top: 17px;
+    padding-left: 3px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+
+    position: absolute;
+    z-index: -1;
+    top: -6.5%;
+    bottom: 0;
+    right: 0;
+    left: -4%;
+
+    height: 250px;
+    width: 250px;
+    background: rgb(140, 188, 250);
+
+    border-radius: 100%;
+}

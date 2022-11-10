@@ -1,12 +1,13 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
     <span class="grid grid-cols-2 gap-x-3">
         <span>
-            <label class="text-gray-600/90 font-semibold">First Name</label>
+            <label class="text-gray-600/90 font-semibold" for="firstName">First Name</label>
             <input 
-                type="text" 
+                type="text"
+                name="firstName" 
                 class="w-full px-1 py-[2px] border border-solid border-gray-700/30 rounded-sm"
-                placeholder=""
                 formControlName="firstName"
+                appFocus
             >
         </span>
         <span>
@@ -14,7 +15,6 @@
             <input 
                 type="text" 
                 class="w-full px-1 py-[2px] border border-solid border-gray-700/30 rounded-sm"
-                placeholder=""
                 formControlName="lastName"
             >
         </span>
@@ -25,7 +25,6 @@
     <input 
         type="email" 
         class="w-full px-1 py-[2px] border border-solid border-gray-700/30 rounded-sm"
-        placeholder=""
         formControlName="email"
     >
 
@@ -33,26 +32,42 @@
     <label class="text-gray-600/90 font-semibold">Password</label>
     <input 
         type="password" 
-        class="w-full px-1 py-[2px] border border-solid border-gray-700/30 rounded-sm"
-        placeholder=""
+        class="w-full px-1 py-[2px] border border-solid rounded-sm"
+        [ngClass]="{
+            'border-gray-700/30': !formError.password,
+            'border-red-500': formError.password
+        }"
         formControlName="password"
     >
-
-    <!-- 9:54 pm 10/31/2022 The form is not implemented. The verification of both passwords as well.-->
 
     <label class="text-gray-600/90 font-semibold">
         Retype Password
     </label>
     <input 
         type="password" 
-        class="w-full px-1 py-[2px] border border-solid border-gray-700/30 rounded-sm"
+        class="w-full px-1 py-[2px] border border-solid rounded-sm"
+        [ngClass]="{
+            'border-gray-700/30': !formError.retypedPassword,
+            'border-red-500': formError.retypedPassword
+        }"
         formControlName="retypedPassword"
     >
+
+    <p class="text-red-500"
+        *ngIf="formError.firstName || formError.lastName || formError.email || formError.password"
+    >
+        {{ errorMessage }}
+    </p>
 
     <button
         type="submit"
         class="w-full mt-5 py-3 bg-blue-400 text-white font-bold rounded-md hover:bg-blue-600 transition-colors"
     >
-        Register
+        <img 
+            class="absolute w-6 animate-spin left-[38%]" src="assets/icons/Circle.svg"
+            *ngIf="isLoading" 
+        />
+
+        <p class="ml-2">Register</p>
     </button>
 </form>

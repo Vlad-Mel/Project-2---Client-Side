@@ -21,11 +21,23 @@
         formControlName="password"
     >
 
+    <p
+        class="text-red-500"
+        *ngIf="hasError"
+    >
+        {{ error }}
+    </p>
+
     <button
         type="submit"
-        class="mt-5 py-3 bg-blue-400 text-white font-bold rounded-md hover:bg-blue-600 transition-colors"
+        class="grid grid-flow-col auto-cols-max justify-center items-center mt-5 py-3 bg-blue-400 text-white font-bold rounded-md hover:bg-blue-600 transition-colors"
     >
-        Sign In
+        <img 
+            class="absolute w-6 animate-spin left-[38%]" src="assets/icons/Circle.svg"
+            *ngIf="isLoading" 
+        />
+
+        <p>Sign In</p>
     </button>
 
 </form>

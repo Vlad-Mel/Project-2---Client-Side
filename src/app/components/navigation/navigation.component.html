@@ -1,41 +1,97 @@
 <div class="bg-gray-200 flex items-center justify-between px-4 py-2 box-shadow">
 
     <!-- Logo and Name of the company-->
-    <span class="grid grid-flow-col auto-cols-max items-center gap-3 ">
-
-        <img class="w-[75px] select-none" src="assets/Logo.png" alt="Logo">
+    <a
+        routerLink="/"
+        class="grid grid-flow-col auto-cols-max items-center gap-3"
+    >
+        <img class="w-[75px] select-none" src="assets/Logo.svg" alt="Logo">
 
         <h2 class="text-lg font-semibold leading-tight">
             Apparatus <br />Manufacturers Group LLC
         </h2>
-    </span>
+    </a>
 
-    <span>
+    <!-- Middle Navigation Links-->
+    <nav>
         <a routerLink="/" class="mr-2">Products</a>
         <a routerLink="/about">About</a>
-    </span>
-`
+    </nav>
+
+
+    <!-- Last Navigation Links-->
     <span class="flex">
         <button 
-            class="mr-2"
+            class="mr-3"
+            *ngIf="!(isAuthenticated$ | async)"
             (click)="modalService.open()"
         >
             Login
         </button>
-        <button
-            (click)="userService.logout()"
-        >
-            Logout
-        </button>
 
-        <a class="relative cart" routerLink="/about">
-            <img class="w-[45px]" src="/assets/icons/cart_icon.png" alt="Cart">
+
+        <app-dropdown-menu 
+            menuTitle="Profile"
+            *ngIf="isAuthenticated$ | async"
+        >
+            <!-- Light/Dark Mode-->
+            <div class="grid grid-flow-col">
+                <button class="grid grid-flow-col auto-cols-max items-center text-gray-700 px-1 mx-3 py-1 my-1 text-sm"
+                    [ngClass]="{
+                        'bg-slate-200/80 rounded-xl' : isLightMode
+                    }"
+                    (click)="isLightMode = true"
+                >
+                    <img src='assets/icons/Sun.svg' />
+                    <p class="ml-2">Light</p>
+                </button>
+
+                <button class="grid grid-flow-col auto-cols-max items-center text-gray-700 px-1 mx-3 py-1 my-1 text-sm"
+                    [ngClass]="{
+                        'bg-slate-200/80 rounded-xl' : !isLightMode
+                    }"
+                    (click)="isLightMode = false"
+                >
+                    <img src='assets/icons/Moon.svg' />
+                    <p class="ml-2">Dark</p>
+                </button>
+            </div>
+
+
+            <a class="grid grid-flow-col auto-cols-max text-gray-700 px-4 py-2 text-sm hover:bg-blue-50/80" routerLink="profile">
+                <img class="w-5" src="assets/icons/Account.svg" />
+
+                <p class="ml-2">Account Settings</p>
+            </a>
+
+            <a class="grid grid-flow-col auto-cols-max text-gray-700 px-4 py-2 text-sm hover:bg-blue-50/80" routerLink="profile">
+                <img class="w-5" src="assets/icons/DebitCreditCard.svg" />
+
+                <p class="ml-2">Payment Information</p>
+            </a>
+            <button
+                class="grid grid-flow-col auto-cols-max text-gray-700 pr-3 pl-4 py-2 text-sm w-full text-left hover:bg-blue-50/80"
+                (click)="userService.logout()"
+            >
+                <img class="w-5" src="assets/icons/Logout.svg" />
+                
+                <p class="ml-2">Logout</p>
+            </button>
+        </app-dropdown-menu>
+
+        
+        
+
+        <a class="relative cart grid grid-flow-col auto-cols-max items-center border border-blue-300 px-4 py-1" routerLink="/about">
+            <p>Checkout</p>
+            <img class="w-[30px]" src="/assets/icons/cart_icon.png" alt="Cart">
         </a>
     </span>
     
 </div>
 
 
+<!-- Login / Register window-->
 <app-modal
     [showLogo]="true"
     *ngIf="modalService.isVisible$ | async"
