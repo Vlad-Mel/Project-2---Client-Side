@@ -18,6 +18,10 @@ import { ProfileAsideComponent } from './components/profile-aside/profile-aside.
 import { ProfileFormComponent } from './components/profile-form/profile-form.component';
 import { DropdownMenuComponent } from './components/utils/dropdown-menu/dropdown-menu.component';
 import { FocusDirective } from './directives/focus.directive';
+import { ProductBrowsingPageComponent } from './pages/product-browsing-page/product-browsing-page.component';
+import { BrowseGridComponent } from './components/browse-grid/browse-grid.component';
+import { BrowseSidebarComponent } from './components/browse-sidebar/browse-sidebar.component';
+import { BrowseItemComponent } from './components/browse-item/browse-item.component';
 
 
 @NgModule({
@@ -32,7 +36,11 @@ import { FocusDirective } from './directives/focus.directive';
     ProfileAsideComponent,
     ProfileFormComponent,
     DropdownMenuComponent,
-    FocusDirective
+    FocusDirective,
+    ProductBrowsingPageComponent,
+    BrowseGridComponent,
+    BrowseSidebarComponent,
+    BrowseItemComponent,
   ],
   imports: [
     BrowserModule,
