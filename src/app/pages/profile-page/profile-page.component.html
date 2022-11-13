@@ -1,11 +1,48 @@
-<app-navigation></app-navigation>
+<div class="min-h-screen">
+    <app-navigation></app-navigation>
 
-<!-- Container-->
-<div class="bg-blue-100/30">
-    <div class="grid grid-cols-[minmax(250px,_350px)_1fr] max-w-[1900px] py-8 px-16 gap-x-14 justify-center m-auto pt-14">
-        <app-profile-aside></app-profile-aside>
-        
-        <app-profile-form></app-profile-form>
+    <!-- Container-->
+    <div class="bg-blue-100/30 -z-10">
+        <div class="relative grid grid-flow-col max-w-[1900px] py-10 px-16 gap-x-3 justify-center m-auto ">
+            <app-profile-navigation [name]="user.firstName"></app-profile-navigation>
+
+            <div class="p-4 rounded-lg min-w-[450px] max-w-[1200px] bg-white box-shadow"
+                [ngSwitch]="router.url"
+            >
+                <span *ngSwitchCase="'/profile'">
+                    <h2 class="ml-1 text-xl font-semibold">Basic Information</h2>
+                    <hr class="my-3" />
+                    <app-profile-form [user]="user"></app-profile-form>
+                </span>
+
+                <span *ngSwitchCase="'/profile/security-settings'">
+                    <h2 class="ml-1 text-xl font-semibold">Security Settings</h2>
+                    <hr class="my-3" />
+                    <app-security-settings></app-security-settings>
+                </span>
+
+                <span *ngSwitchCase="'/profile/privacy-policy'">
+                    <h2 class="ml-1 text-xl font-semibold">Privacy Policy</h2>
+                    <hr class="my-3" />
+                    <app-privacy-policy></app-privacy-policy>
+                </span>
+
+                <span *ngSwitchCase="'/profile/methods-of-payment'">
+                    <h2 class="ml-1 text-xl font-semibold">Methods of Payment</h2>
+                    <hr class="my-3" />
+                    <app-methods-of-payment></app-methods-of-payment>
+                </span>
+
+                <span *ngSwitchCase="'/profile/shipping-details'">
+                    <h2 class="ml-1 text-xl font-semibold">Shipping Details</h2>
+                    <hr class="my-3" />
+                    <app-shipping-details></app-shipping-details>
+                </span>
+
+            </div>
+        </div>
     </div>
+
+    <app-footer></app-footer>
 </div>
 

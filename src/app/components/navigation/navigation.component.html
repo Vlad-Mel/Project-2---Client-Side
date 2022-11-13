@@ -1,4 +1,4 @@
-<div class="fixed w-[100%] z-10 bg-gray-200 flex items-center justify-between px-4 py-2 box-shadow">
+<div class="fixed w-[100%] z-10 bg-gray-200 flex items-center justify-between px-4 py-2 box-shadow z-10">
 
     <!-- Logo and Name of the company-->
     <a
@@ -58,23 +58,17 @@
             </div>
 
 
-            <a class="grid grid-flow-col auto-cols-max text-gray-700 px-4 py-2 text-sm hover:bg-blue-50/80" routerLink="profile">
-                <img class="w-5" src="assets/icons/Account.svg" />
+            <a class="grid grid-flow-col auto-cols-max text-gray-700 px-4 py-2 my-2 text-sm hover:bg-blue-50/80" routerLink="profile">
+                <img class="w-5" src="assets/icons/Account.svg" alt="Account image"/>
 
                 <p class="ml-2">Account Settings</p>
             </a>
 
-            <a class="grid grid-flow-col auto-cols-max text-gray-700 px-4 py-2 text-sm hover:bg-blue-50/80" routerLink="profile">
-                <img class="w-5" src="assets/icons/DebitCreditCard.svg" />
-
-                <p class="ml-2">Payment Information</p>
-            </a>
             <button
-                class="grid grid-flow-col auto-cols-max text-gray-700 pr-3 pl-4 py-2 text-sm w-full text-left hover:bg-blue-50/80"
+                class="grid grid-flow-col auto-cols-max text-gray-700 pr-3 pl-4 py-2 my-2 text-sm w-full text-left hover:bg-blue-50/80"
                 (click)="userService.logout()"
-                routerLink="/"
             >
-                <img class="w-5" src="assets/icons/Logout.svg" />
+                <img class="w-5" src="assets/icons/Logout.svg" alt="Exit image"/>
                 
                 <p class="ml-2">Logout</p>
             </button>

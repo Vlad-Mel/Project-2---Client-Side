@@ -5,17 +5,19 @@
             <input 
                 type="text"
                 name="firstName" 
-                class="w-full px-1 py-[2px] border border-solid border-gray-700/30 rounded-sm"
+                class="w-full px-1 py-[2px] border border-solid border-gray-700/30 rounded-sm focus:outline-blue-200"
                 formControlName="firstName"
                 appFocus
+                autocomplete="off"
             >
         </span>
         <span>
             <label class="text-gray-600/90 font-semibold">Last Name</label>
             <input 
                 type="text" 
-                class="w-full px-1 py-[2px] border border-solid border-gray-700/30 rounded-sm"
+                class="w-full px-1 py-[2px] border border-solid border-gray-700/30 rounded-sm focus:outline-blue-200"
                 formControlName="lastName"
+                autocomplete="off"
             >
         </span>
     </span>
@@ -24,15 +26,16 @@
     <label class="text-gray-600/90 font-semibold">E-Mail Address</label>
     <input 
         type="email" 
-        class="w-full px-1 py-[2px] border border-solid border-gray-700/30 rounded-sm"
+        class="w-full px-1 py-[2px] border border-solid border-gray-700/30 rounded-sm focus:outline-blue-200"
         formControlName="email"
+        autocomplete="off"
     >
 
 
     <label class="text-gray-600/90 font-semibold">Password</label>
     <input 
         type="password" 
-        class="w-full px-1 py-[2px] border border-solid rounded-sm"
+        class="w-full px-1 py-[2px] border border-solid rounded-sm focus:outline-blue-200"
         [ngClass]="{
             'border-gray-700/30': !formError.password,
             'border-red-500': formError.password
@@ -45,7 +48,7 @@
     </label>
     <input 
         type="password" 
-        class="w-full px-1 py-[2px] border border-solid rounded-sm"
+        class="w-full px-1 py-[2px] border border-solid rounded-sm focus:outline-blue-200"
         [ngClass]="{
             'border-gray-700/30': !formError.retypedPassword,
             'border-red-500': formError.retypedPassword
