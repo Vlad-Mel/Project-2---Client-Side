@@ -24,7 +24,6 @@ export class UserService {
   logout() {
     return this.http.get(`${this.url}/logout`, { withCredentials: true})
                     .subscribe(res => {
-                      console.log(res);
                       this.authService.setToken = '';
                       localStorage.clear();
                     });

@@ -1,0 +1,74 @@
+<div class="">
+
+
+<h3 class="font-semibold text-lg">Change password</h3>
+<p class="my-3">Use this form to change your password. Once changed, your new password will be in effect next time you login.</p>
+<form
+    class="flex flex-col justify-center max-w-[400px] m-auto"
+    [formGroup]="form"
+    (ngSubmit)="submit()"
+>
+    <label class="text-gray-600/90 font-semibold mt-4">
+        Current Password
+    </label>
+    <input
+        type="password"
+        class="mt-0.5 w-full px-1 py-[2px] border border-solid border-gray-700/30 rounded-sm focus:outline-blue-200"
+        placeholder=""
+        autocomplete="off"
+        formControlName="currentPassword"
+    >
+
+    <label class="text-gray-600/90 font-semibold mt-1">
+        New Password
+    </label>
+    <input
+        type="password"
+        class="mt-0.5 w-full px-1 py-[2px] border border-solid border-gray-700/30 rounded-sm focus:outline-blue-200"
+        [ngClass]="{
+            'border-gray-700/30': !hasError,
+            'border-red-500': hasError
+        }"
+        placeholder=""
+        autocomplete="off"
+        formControlName="newPassword"
+    >
+
+    <label class="text-gray-600/90 font-semibold mt-1">
+        Re-enter New Password
+    </label>
+    <input
+        type="password"
+        class="mt-0.5 w-full px-1 py-[2px] border border-solid rounded-sm focus:outline-blue-200"
+        [ngClass]="{
+            'border-gray-700/30': !hasError,
+            'border-red-500': hasError
+        }"
+        placeholder=""
+        autocomplete="off"
+        formControlName="reenteredPassword"
+    >
+
+    <p class="font-semibold my-2 mx-auto"
+        [ngClass]="{
+            'text-green-600' : !hasError,
+            'text-red-500' : hasError
+        }"
+    >
+        {{ message }}
+    </p>
+
+    <button
+        type="submit"
+        class="w-[200px] justify-items-center flex m-auto justify-self-center justify-center items-center mt-3 py-3 bg-blue-400 text-white font-bold rounded-md hover:bg-blue-600 transition-colors"
+    >
+        <img 
+            class="relative w-6 animate-spin -left-[4%]" src="assets/icons/Circle.svg" alt="spinning circle"
+            *ngIf="isLoading"
+        />
+
+        <p>Change Password</p>
+    </button>
+</form>
+
+</div>

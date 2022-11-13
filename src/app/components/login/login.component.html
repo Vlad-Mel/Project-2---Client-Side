@@ -1,12 +1,14 @@
-<form class="grid" [formGroup]="form" (ngSubmit)="submit()" >
+<form class="grid" [formGroup]="form" (ngSubmit)="submit()">
     <label class="text-gray-600/90 font-semibold">
         E-Mail Address
     </label>
     <input
         type="text"
-        class="px-1 py-[2px] border border-solid border-gray-700/30 rounded-sm"
+        class="px-1 py-[2px] border border-solid border-gray-700/30 rounded-sm focus:outline-blue-200"
         placeholder=""
         formControlName="username"
+        appFocus
+        autocomplete="off"
     >
 
     <!-- Login Password-->
@@ -16,7 +18,7 @@
     
     <input
         type="password"
-        class="px-1 py-[2px] border border-solid border-gray-700/30 rounded-sm"
+        class="px-1 py-[2px] border border-solid border-gray-700/30 rounded-sm focus:outline-blue-200"
         placeholder=""
         formControlName="password"
     >

@@ -4,6 +4,11 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '../states/app.state';
 import { authLogin, authLogout } from '../states/auth/auth.actions';
+import { IUser } from '../models/user';
+
+interface customJwtPayload extends JwtPayload {
+  user: any;
+}
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +28,14 @@ export class AuthService {
 
   static get getToken(): string {
     return this.token;
+  }
+
+  static getUser() {
+
+    if (AuthService.token === '') return null;
+  
+    const decoded = jwtDecode<customJwtPayload>(AuthService.token);
+    return decoded.user;
   }
 
   static isAuthenticated() {

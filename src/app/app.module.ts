@@ -14,10 +14,15 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { StoreModule } from '@ngrx/store';
 import { authReducer } from './states/auth/auth.reducer';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
-import { ProfileAsideComponent } from './components/profile-aside/profile-aside.component';
-import { ProfileFormComponent } from './components/profile-form/profile-form.component';
+import { ProfileFormComponent } from './components/profile/profile-form/profile-form.component';
 import { DropdownMenuComponent } from './components/utils/dropdown-menu/dropdown-menu.component';
 import { FocusDirective } from './directives/focus.directive';
+import { ProfileNavigationComponent } from './components/profile/profile-navigation/profile-navigation.component';
+import { PrivacyPolicyComponent } from './components/profile/privacy-policy/privacy-policy.component';
+import { SecuritySettingsComponent } from './components/profile/security-settings/security-settings.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { MethodsOfPaymentComponent } from './components/profile/methods-of-payment/methods-of-payment.component';
+import { ShippingDetailsComponent } from './components/profile/shipping-details/shipping-details.component';
 
 
 @NgModule({
@@ -29,10 +34,15 @@ import { FocusDirective } from './directives/focus.directive';
     LoginComponent,
     RegistrationComponent,
     ProfilePageComponent,
-    ProfileAsideComponent,
     ProfileFormComponent,
     DropdownMenuComponent,
-    FocusDirective
+    FocusDirective,
+    ProfileNavigationComponent,
+    PrivacyPolicyComponent,
+    SecuritySettingsComponent,
+    FooterComponent,
+    MethodsOfPaymentComponent,
+    ShippingDetailsComponent
   ],
   imports: [
     BrowserModule,
