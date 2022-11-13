@@ -3,6 +3,9 @@
     position: fixed;
     left: 0;
     top: 85px;
-    width: 100px;
+    width: 150px;
     height: 100%;
+    padding: 20px;
 }
+
+

@@ -1,6 +1,14 @@
 #grid {
     position: relative;
-    top: 85px;
-    left: 100px;
+    top: 100px;
+    left: 175px;
+}
+
+#bottomPad {
+    position: relative;
+    left: 0;
+    top:0;
+    height: 200px;
+    width: 100%;
 }
    
