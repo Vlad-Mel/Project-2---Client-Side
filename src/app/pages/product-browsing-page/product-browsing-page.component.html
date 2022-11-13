@@ -1,0 +1,10 @@
+<app-navigation></app-navigation>
+<app-browse-sidebar 
+    (contraptionEvent)="showContraptions=$event"
+    (deviceEvent)="showDevices=$event"
+    (gadgetEvent)="showGadgets=$event"
+    (gizmoEvent)="showGizmos=$event"
+    (machineEvent)="showMachines=$event">
+</app-browse-sidebar>
+<app-browse-grid [visibleCategories]="getVisibleCategories()"></app-browse-grid>
+<app-footer></app-footer>

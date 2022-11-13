@@ -17,6 +17,10 @@ import { ProfilePageComponent } from './pages/profile-page/profile-page.componen
 import { ProfileFormComponent } from './components/profile/profile-form/profile-form.component';
 import { DropdownMenuComponent } from './components/utils/dropdown-menu/dropdown-menu.component';
 import { FocusDirective } from './directives/focus.directive';
+import { ProductBrowsingPageComponent } from './pages/product-browsing-page/product-browsing-page.component';
+import { BrowseGridComponent } from './components/browse-grid/browse-grid.component';
+import { BrowseSidebarComponent } from './components/browse-sidebar/browse-sidebar.component';
+import { BrowseItemComponent } from './components/browse-item/browse-item.component';
 import { ProfileNavigationComponent } from './components/profile/profile-navigation/profile-navigation.component';
 import { PrivacyPolicyComponent } from './components/profile/privacy-policy/privacy-policy.component';
 import { SecuritySettingsComponent } from './components/profile/security-settings/security-settings.component';
@@ -37,6 +41,10 @@ import { ShippingDetailsComponent } from './components/profile/shipping-details/
     ProfileFormComponent,
     DropdownMenuComponent,
     FocusDirective,
+    ProductBrowsingPageComponent,
+    BrowseGridComponent,
+    BrowseSidebarComponent,
+    BrowseItemComponent,
     ProfileNavigationComponent,
     PrivacyPolicyComponent,
     SecuritySettingsComponent,

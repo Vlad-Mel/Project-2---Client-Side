@@ -6,9 +6,12 @@ import { SecuritySettingsComponent } from './components/profile/security-setting
 import { AuthGuard } from './guards/auth.guard';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
+import { ProductBrowsingPageComponent } from './pages/product-browsing-page/product-browsing-page.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent},
+  { path: 'profile', component: ProfilePageComponent},
+  { path: 'products', component: ProductBrowsingPageComponent},
   { path: 'profile', 
     component: ProfilePageComponent,
     canActivate: [AuthGuard], 

@@ -1,0 +1,13 @@
+<div id="sidebar">
+    <h1> Categories:</h1>
+    <input id="contraption" type="checkbox" (change)="emitContraption()" [(ngModel)]="contraptionCheck" [ngModelOptions]="{standalone: true}">
+    <span> Contraptions</span><br/>
+    <input id="device" type="checkbox" (change)="emitDevice()" [(ngModel)]="deviceCheck" [ngModelOptions]="{standalone: true}">
+    <span> Devices</span><br/>
+    <input id="gadget" type="checkbox" (change)="emitGadget()" [(ngModel)]="gadgetCheck" [ngModelOptions]="{standalone: true}">
+    <span> Gadgets</span><br/>
+    <input id="gizmo" type="checkbox" (change)="emitGizmo()" [(ngModel)]="gizmoCheck" [ngModelOptions]="{standalone: true}">
+    <span> Gizmos</span><br/>
+    <input id="machine" type="checkbox" (change)="emitMachine()" [(ngModel)]="machineCheck" [ngModelOptions]="{standalone: true}">
+    <span> Machines</span><br/>
+</div>
