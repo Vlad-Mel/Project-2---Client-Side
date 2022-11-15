@@ -1,0 +1,13 @@
+<div style="position:fixed; width: 100%; z-index: 3;">
+    <app-navigation></app-navigation>
+</div>
+<div style="position:fixed; top: 85px; height: 50px; width: 100%; z-index: 2; background-color: lightblue;">
+    <input style="margin: 14px;" id="search" [(ngModel)]="query" placeholder="Search">
+</div>
+<div style="position: relative; top: 50px; min-height: 700px;">
+    <app-search-results *ngIf="query.length>0" [query]="query"></app-search-results>
+</div>
+<div style="width: 100%">
+<!--     <div style="height:1000px"></div> -->
+    <app-footer></app-footer>
+</div>
