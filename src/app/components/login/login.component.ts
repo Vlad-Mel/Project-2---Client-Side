@@ -18,7 +18,7 @@ export class LoginComponent {
   constructor(private userService: UserService, private authService: AuthService, private modalService: ModalService){}
 
   form = new FormGroup({
-    username: new FormControl<string>('', [
+    email: new FormControl<string>('', [
       Validators.required
     ]),
     password: new FormControl<string>('', [
@@ -30,27 +30,26 @@ export class LoginComponent {
     this.isLoading = true;
 
     this.userService.login({
-      username: this.form.value.username as string,
+      email: this.form.value.email as string,
       password: this.form.value.password as string
     }).subscribe( {
 
       next: response => {
+        
         this.hasError = false;
-        
-        console.log(response)
-        
+
+        this.authService.setToken = document.cookie;
         setTimeout(() => {
           this.modalService.close()
           this.isLoading = false;
         }, 1000);
-        
-        this.authService.setToken = document.cookie;
       },
       error: errorResponse => {
+        console.log(errorResponse)
 
         setTimeout(() => {
           this.hasError = true
-          this.error = errorResponse.error.message;
+          this.error = errorResponse.error;
           this.isLoading = false;
         }, 1000);
           
@@ -61,8 +60,8 @@ export class LoginComponent {
   }
   
 
-  get username() {
-    return this.form.controls.username as FormControl
+  get email() {
+    return this.form.controls.email as FormControl
   }
   
 }
