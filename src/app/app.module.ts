@@ -30,6 +30,7 @@ import { ShippingDetailsComponent } from './components/profile/shipping-details/
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { SearchItemComponent } from './components/search-item/search-item.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
+import { SalesComponent } from './components/sales/sales.component';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { SearchResultsComponent } from './components/search-results/search-resul
     ShippingDetailsComponent,
     SearchPageComponent,
     SearchItemComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    SalesComponent
   ],
   imports: [
     BrowserModule,
