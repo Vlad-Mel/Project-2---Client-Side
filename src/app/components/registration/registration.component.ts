@@ -10,6 +10,10 @@ export class RegistrationComponent {
 
   isLoading = false;
 
+  isFailedRegister = false;
+  isSuccessRegister = false;
+  serverErrorMessage!:string;
+
   formError: any = {
     "password" : false,
     "retypedPassword" : false
@@ -38,6 +42,8 @@ export class RegistrationComponent {
 
   submit(): void {
     this.isLoading = true;
+    this.isSuccessRegister = false;
+    this.isFailedRegister = false;
 
     if (this.form.value.password === this.form.value.retypedPassword) {
       Object.keys(this.formError).forEach( key => { this.formError[key] = false;})
@@ -50,16 +56,26 @@ export class RegistrationComponent {
       }).subscribe({
         
         next: response => {
+
           setTimeout( () => {
             this.isLoading = false;
+            this.isSuccessRegister = true;
           }, 1000)
+
           console.log(response);
         },
         error: (error) => {
+
           setTimeout( () => {
             this.isLoading = false;
+            this.isFailedRegister = true;
+            this.errorMessage = error.error.message;
           }, 1000)
+
           console.log(error);
+        },
+        complete: () => {
+          
         }
     })
 

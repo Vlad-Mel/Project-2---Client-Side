@@ -10,7 +10,6 @@ import { ProductBrowsingPageComponent } from './pages/product-browsing-page/prod
 
 const routes: Routes = [
   { path: '', component: HomePageComponent},
-  { path: 'profile', component: ProfilePageComponent},
   { path: 'products', component: ProductBrowsingPageComponent},
   { path: 'profile', 
     component: ProfilePageComponent,

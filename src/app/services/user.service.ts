@@ -13,19 +13,20 @@ export class UserService {
 
   constructor(private http: HttpClient, private authService: AuthService) { }
 
-  login(login: ILogin): Observable<IUser> {
-    return this.http.post<IUser>(`${this.url}/login`, login, { withCredentials: true })
+  login(login: ILogin): Observable<any> {
+    return this.http.post<IUser>(`${this.url}/user/login`, login, { withCredentials: true, observe: "response" })
   }
 
   createUser(registration: IUserRegistration) {
-    return this.http.post<IUserRegistration>(`${this.url}/registration`, registration);
+    return this.http.post<IUserRegistration>(`${this.url}/user/register`, registration);
   }
 
   logout() {
-    return this.http.get(`${this.url}/logout`, { withCredentials: true})
+    return this.http.get(`${this.url}/user/logout`, {withCredentials: true})
                     .subscribe(res => {
-                      this.authService.setToken = '';
+                      console.log(res)
                       localStorage.clear();
+                      this.authService.setToken = '';
                     });
   }
 }

@@ -15,13 +15,17 @@ interface customJwtPayload extends JwtPayload {
 })
 export class AuthService {
 
-  static token = (document.cookie != '') ? document.cookie : '';
+  static token = (document.cookie != 'token=') ? document.cookie : '';
 
   constructor(private store: Store<AppState>) { }
 
   set setToken(token: string) {
     AuthService.token = token;
     localStorage.setItem('token', AuthService.token);
+
+    if (token === '') {
+      document.cookie = "token= ";
+    }
 
     (AuthService.isAuthenticated()) ? this.store.dispatch(authLogin()) : this.store.dispatch(authLogout());
   }
@@ -32,15 +36,14 @@ export class AuthService {
 
   static getUser() {
 
-    if (AuthService.token === '') return null;
+    if (AuthService.token === 'token=' || AuthService.token === '') return null;
   
     const decoded = jwtDecode<customJwtPayload>(AuthService.token);
     return decoded.user;
   }
 
   static isAuthenticated() {
-
-    if (AuthService.token === '') return false;
+    if (AuthService.token === 'token=' || AuthService.token === '') return false;
   
     const decoded = jwtDecode<JwtPayload>(AuthService.token);
     const currentDate = new Date();
@@ -49,4 +52,3 @@ export class AuthService {
     return (decoded.exp != undefined && decoded.exp > seconds);
   }
 }
-

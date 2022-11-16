@@ -13,7 +13,6 @@ export const authReducer = createReducer(
     initialState,
 
     on(authLogin, (state) => {
-        console.log(state)
         return ({
         ...state,
         auth: true
