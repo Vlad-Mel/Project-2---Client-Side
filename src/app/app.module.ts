@@ -27,6 +27,9 @@ import { SecuritySettingsComponent } from './components/profile/security-setting
 import { FooterComponent } from './components/footer/footer.component';
 import { MethodsOfPaymentComponent } from './components/profile/methods-of-payment/methods-of-payment.component';
 import { ShippingDetailsComponent } from './components/profile/shipping-details/shipping-details.component';
+import { SearchPageComponent } from './pages/search-page/search-page.component';
+import { SearchItemComponent } from './components/search-item/search-item.component';
+import { SearchResultsComponent } from './components/search-results/search-results.component';
 
 
 @NgModule({
@@ -50,7 +53,10 @@ import { ShippingDetailsComponent } from './components/profile/shipping-details/
     SecuritySettingsComponent,
     FooterComponent,
     MethodsOfPaymentComponent,
-    ShippingDetailsComponent
+    ShippingDetailsComponent,
+    SearchPageComponent,
+    SearchItemComponent,
+    SearchResultsComponent
   ],
   imports: [
     BrowserModule,
