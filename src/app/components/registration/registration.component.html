@@ -57,9 +57,15 @@
     >
 
     <p class="text-red-500"
-        *ngIf="formError.firstName || formError.lastName || formError.email || formError.password"
+        *ngIf="formError.firstName || formError.lastName || formError.email || formError.password || isFailedRegister"
     >
         {{ errorMessage }}
+    </p>
+
+    <p class="text-green-600 font-semibold"
+        *ngIf="isSuccessRegister"
+    >
+       {{ isSuccessRegister ? 'The user is successfully register!' : ''}}
     </p>
 
     <button

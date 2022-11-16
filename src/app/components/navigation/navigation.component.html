@@ -1,4 +1,4 @@
-<div class=" w-[100%] z-10 bg-gray-200 flex items-center justify-between px-4 py-2 box-shadow z-10">
+<div class="relative w-[100%] bg-gray-200 flex items-center justify-between px-4 py-2 box-shadow z-10">
 
     <!-- Logo and Name of the company-->
     <a
@@ -21,15 +21,15 @@
 
 
     <!-- Last Navigation Links-->
+            
     <span class="flex">
         <button 
             class="mr-3"
-            *ngIf="!(isAuthenticated$ | async)"
             (click)="modalService.open()"
+            *ngIf="!(isAuthenticated$ | async)"
         >
             Login
         </button>
-
 
         <app-dropdown-menu 
             menuTitle="Profile"
@@ -59,7 +59,8 @@
             </div>
 
 
-            <a class="grid grid-flow-col auto-cols-max text-gray-700 px-4 py-2 my-2 text-sm hover:bg-blue-50/80" routerLink="profile">
+            <a class="grid grid-flow-col auto-cols-max text-gray-700 px-4 py-2 my-2 text-sm hover:bg-blue-50/80" 
+                routerLink="/profile">
                 <img class="w-5" src="assets/icons/Account.svg" alt="Account image"/>
 
                 <p class="ml-2">Account Settings</p>
