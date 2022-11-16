@@ -27,7 +27,8 @@ import { SecuritySettingsComponent } from './components/profile/security-setting
 import { FooterComponent } from './components/footer/footer.component';
 import { MethodsOfPaymentComponent } from './components/profile/methods-of-payment/methods-of-payment.component';
 import { ShippingDetailsComponent } from './components/profile/shipping-details/shipping-details.component';
-
+import { ProductPageComponent } from './pages/product-page/product-page.component';
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,9 @@ import { ShippingDetailsComponent } from './components/profile/shipping-details/
     SecuritySettingsComponent,
     FooterComponent,
     MethodsOfPaymentComponent,
-    ShippingDetailsComponent
+    ShippingDetailsComponent,
+    ProductPageComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
