@@ -43,4 +43,9 @@ export class ProductsService {
     
   }
 
+  addToCart(userID : number, productID: number, quantity: number){
+      return this.httpClient.post("localhost:8080/cart/" + userID + "/" + productID, "")
+      console.log("added " + quantity + " of product " + productID + " to user #" + userID + "'s cart")
+  }
+
 }
