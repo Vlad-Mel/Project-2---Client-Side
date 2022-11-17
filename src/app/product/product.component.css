@@ -1,0 +1,67 @@
+h1 {
+    text-align: center;
+    font-size: 60pt;
+    font-weight: bold;   
+}
+
+img {
+    border : solid 3px grey;
+    width: 100%;
+    margin: 2%;
+    display:inline;
+    
+    
+}
+
+#img{
+    margin:2%
+}
+
+#information{
+    border: solid 3px grey;
+    width: 100%;
+    margin: 2%;
+    background-color: #E5E7EB;
+}
+
+#information p{
+    font-size: 24pt;
+    float: left;
+    width: 75%;
+}
+
+#quantity, #addToCart{
+    border: solid 1px grey;
+    margin: 1px;
+    background-color: #00bfff;
+    color:white;
+    padding:2px;
+    text-shadow: 3px;
+    float:right;
+}
+
+#addToCart{
+    width: 100px;
+}
+
+#quantity{
+    width : 50px;
+}
+
+#price{
+    font-size: 24pt;
+    text-align: right;
+}
+
+#price span{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#sale{
+    color:red;
+}
+
+.page{
+    min-height: 59vh;
+}
