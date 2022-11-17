@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { SalesService } from 'src/app/services/sales.service';
+import { IProduct } from 'src/app/models/product';
 
 @Component({
     selector: "app-home-page",
@@ -6,7 +8,9 @@ import { Component } from '@angular/core';
 })
 class HomePageComponent {
 
-    constructor(){}
+    constructor(sales: SalesService){}
+
+   products?: IProduct[]; 
 
 }
 
