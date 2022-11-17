@@ -29,6 +29,9 @@ import { MethodsOfPaymentComponent } from './components/profile/methods-of-payme
 import { ShippingDetailsComponent } from './components/profile/shipping-details/shipping-details.component';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
 import { ProductComponent } from './product/product.component';
+import { SearchPageComponent } from './pages/search-page/search-page.component';
+import { SearchItemComponent } from './components/search-item/search-item.component';
+import { SearchResultsComponent } from './components/search-results/search-results.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +56,10 @@ import { ProductComponent } from './product/product.component';
     MethodsOfPaymentComponent,
     ShippingDetailsComponent,
     ProductPageComponent,
-    ProductComponent
+    ProductComponent,
+    SearchPageComponent,
+    SearchItemComponent,
+    SearchResultsComponent
   ],
   imports: [
     BrowserModule,

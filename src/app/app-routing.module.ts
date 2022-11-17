@@ -9,10 +9,10 @@ import { ProfilePageComponent } from './pages/profile-page/profile-page.componen
 import { ProductBrowsingPageComponent } from './pages/product-browsing-page/product-browsing-page.component';
 import { ProductComponent } from './product/product.component';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
+import { SearchPageComponent } from './pages/search-page/search-page.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent},
-  { path: 'profile', component: ProfilePageComponent},
   { path: 'products', component: ProductBrowsingPageComponent},
   { path: 'profile', 
     component: ProfilePageComponent,
@@ -23,8 +23,10 @@ const routes: Routes = [
       { path: 'methods-of-payment', component: MethodsOfPaymentComponent},
       { path: 'shipping-details', component: MethodsOfPaymentComponent}
     ]},
-    {path: 'product/:id', component: ProductPageComponent}
-]
+
+    {path: 'product/:id', component: ProductPageComponent},
+    {path: 'search', component: SearchPageComponent}];
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
