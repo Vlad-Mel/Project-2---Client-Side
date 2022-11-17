@@ -1,6 +1,6 @@
 <div id="grid">
     <ng-container  *ngFor="let product of products">
-    <app-browse-item *ngIf="showProduct(product)" [name]="product.name" [image_url]="product.image_url"></app-browse-item>
+    <app-browse-item *ngIf="showProduct(product)" [name]="product.name" [image_url]="product.image_url" [link_url]="'/product/'+product.id"></app-browse-item>
     </ng-container>
     <div id="bottomPad"></div>
 </div>
