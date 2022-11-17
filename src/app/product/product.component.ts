@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/product';
 import { ProductsService } from '../services/products.service';
 import { ActivatedRoute} from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
+
 
 
 
@@ -16,6 +18,7 @@ export class ProductComponent implements OnInit {
 
   testProduct! : Product
   id! : number
+  value: number = 1;
 
 
   constructor(public ProductsService : ProductsService, private route : ActivatedRoute) {
@@ -27,6 +30,14 @@ export class ProductComponent implements OnInit {
     this.ProductsService.fetchProduct(this.id).subscribe(product => {this.testProduct = product;
     console.log(product)});
 
+  }
+
+  addToCart() : void{
+    this.ProductsService.addToCart(AuthService.getUser().id, this.testProduct.id, this.value)
+  }
+
+  consoleLog(text : string){
+    console.log(text);
   }
 
 }

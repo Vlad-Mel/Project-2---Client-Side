@@ -2,4 +2,8 @@
     <h1>{{testProduct.name}}</h1>
     <img [src] = '"/assets" + testProduct.image_url' alt = "product Image"/>
     <p>{{testProduct.description}}</p>
+    <form id = "cartmanager">
+        <input type = "number" id = "quantity" name = "quantity" min = "1" max = "10" [(ngModel)] = "value"/>
+        <button (click) = "addToCart()">AddToCart</button>
+    </form>
 </div>
