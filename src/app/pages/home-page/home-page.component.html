@@ -1,8 +1,10 @@
-<div class="grid min-h-screen">
-    <app-navigation></app-navigation>
+<app-navigation></app-navigation>
 
-
-    <div class="self-end">
-        <app-footer></app-footer>
-    </div>    
+<div class="sales">
+    <h1>BLACK FRIDAY BLOWOUT DEALS</h1>
+    <p>Advance your production process and enhance your experiments! Masssive discounts for a limited time! Deals this good may be illegal!</p>
+    <div class="products">
+        <app-sale-item [strobe]="strobeOn" *ngFor="let product of products" [product]="product">   </app-sale-item>
+    </div>
 </div>
+<app-footer></app-footer>
