@@ -6,7 +6,7 @@ import { IProduct } from '../models/product';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductsService {
+export class CartService {
 
   mockProducts: IProduct[]=[
     {
@@ -33,8 +33,8 @@ export class ProductsService {
   
   products?: IProduct[];
 
-  fetchProducts(): Observable<IProduct[]> {
-    return this.httpClient.get<IProduct[]>("http://localhost:8080/product/all")
+  fetchCart(): Observable<IProduct[]> {
+    return this.httpClient.get<IProduct[]>("http://localhost:8080/cart/find/{user_id}")
   }
 
 }

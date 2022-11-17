@@ -7,6 +7,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { ProductBrowsingPageComponent } from './pages/product-browsing-page/product-browsing-page.component';
+import { CartPageComponent } from './pages/cart-page/cart-page.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent},
@@ -20,7 +21,8 @@ const routes: Routes = [
       { path: 'security-settings', component: SecuritySettingsComponent},
       { path: 'methods-of-payment', component: MethodsOfPaymentComponent},
       { path: 'shipping-details', component: MethodsOfPaymentComponent}
-    ]}
+    ]},
+  { path: 'checkout', component: CartPageComponent}
 ];
 
 @NgModule({
