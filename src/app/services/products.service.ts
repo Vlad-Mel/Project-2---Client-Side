@@ -19,15 +19,21 @@ export class ProductsService {
     return this.httpClient.get<IProduct[]>("http://localhost:8080/product/all")
   }
 
-  fetchProduct(productID: number): Observable<Product>{
+  fetchProduct(productID: number): Observable<IProduct>{
     console.log(productID);
-    return this.httpClient.get<Product>("http://localhost:8080/product/id/" + productID)
+    return this.httpClient.get<IProduct>("http://localhost:8080/product/id/" + productID)
     
   }
 
   addToCart(userID : number, productID: number, quantity: number){
-      return this.httpClient.post("localhost:8080/cart/" + userID + "/" + productID, "")
       console.log("added " + quantity + " of product " + productID + " to user #" + userID + "'s cart")
+      if(quantity == 1){
+        return this.httpClient.post(`http://localhost:8080/cart/add/${userID}/${productID}`, "")
+      }
+      else{
+        return this.httpClient.post(`http://localhost:8080/cart/add/${userID}/${productID}/${quantity}`, "")
+      }
+      
   }
 
 }

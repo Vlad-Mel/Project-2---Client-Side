@@ -3,6 +3,7 @@ import { Product } from 'src/product';
 import { ProductsService } from '../services/products.service';
 import { ActivatedRoute} from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { IProduct } from '../models/product';
 
 
 
@@ -16,7 +17,7 @@ import { AuthService } from 'src/app/services/auth.service';
 
 export class ProductComponent implements OnInit {
 
-  testProduct! : Product
+  testProduct! : IProduct
   id! : number
   value: number = 1;
 
@@ -33,7 +34,8 @@ export class ProductComponent implements OnInit {
   }
 
   addToCart() : void{
-    this.ProductsService.addToCart(AuthService.getUser().id, this.testProduct.id, this.value)
+    //this.ProductsService.addToCart(AuthService.getUser().id, this.testProduct.id, this.value)
+    this.ProductsService.addToCart(AuthService.getUser().id, this.id, this.value).subscribe(response => {console.log(response)});
   }
 
   consoleLog(text : string){
