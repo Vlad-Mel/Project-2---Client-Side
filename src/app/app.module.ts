@@ -31,6 +31,7 @@ import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { SearchItemComponent } from './components/search-item/search-item.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { SalesComponent } from './components/sales/sales.component';
+import { SaleItemComponent } from './components/sale-item/sale-item.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { SalesComponent } from './components/sales/sales.component';
     SearchPageComponent,
     SearchItemComponent,
     SearchResultsComponent,
-    SalesComponent
+    SalesComponent,
+    SaleItemComponent
   ],
   imports: [
     BrowserModule,

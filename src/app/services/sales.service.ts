@@ -12,7 +12,7 @@ export class SalesService {
   
   products?: IProduct[];
 
-  fetchProducts(query: String): Observable<IProduct[]> {
+  fetchProducts(): Observable<IProduct[]> {
     return this.httpClient.get<IProduct[]>("http://localhost:8080/product/sales");
   }
 
