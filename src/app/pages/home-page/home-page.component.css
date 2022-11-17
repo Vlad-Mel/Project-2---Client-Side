@@ -1,0 +1,22 @@
+h1 {
+    font-size: xx-large;
+    text-align: center;
+    font-family: Impact;
+    color: white;
+}
+
+.products {
+    text-align: center;
+}
+
+p {
+    font-style: italic;
+    text-align: center;
+    color: white;
+}
+
+.sales {
+    margin: 50px;
+    padding: 50px;
+    background-color: black;
+}

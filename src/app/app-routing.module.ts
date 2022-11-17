@@ -7,11 +7,11 @@ import { AuthGuard } from './guards/auth.guard';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { ProductBrowsingPageComponent } from './pages/product-browsing-page/product-browsing-page.component';
+import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { CartPageComponent } from './pages/cart-page/cart-page.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent},
-  { path: 'profile', component: ProfilePageComponent},
   { path: 'products', component: ProductBrowsingPageComponent},
   { path: 'profile', 
     component: ProfilePageComponent,
@@ -22,6 +22,7 @@ const routes: Routes = [
       { path: 'methods-of-payment', component: MethodsOfPaymentComponent},
       { path: 'shipping-details', component: MethodsOfPaymentComponent}
     ]},
+  { path: 'search', component: SearchPageComponent},
   { path: 'checkout', component: CartPageComponent}
 ];
 

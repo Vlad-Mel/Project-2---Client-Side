@@ -6,16 +6,14 @@ import { IProduct } from '../models/product';
 @Injectable({
   providedIn: 'root'
 })
-export class CartService {
+export class SalesService {
 
-  constructor(private httpClient: HttpClient) {
-
-  }
+  constructor(private httpClient: HttpClient) {}
   
   products?: IProduct[];
 
-  fetchCart(): Observable<IProduct[]> {
-    return this.httpClient.get<IProduct[]>("http://localhost:8080/cart/find/{user_id}")
+  fetchProducts(): Observable<IProduct[]> {
+    return this.httpClient.get<IProduct[]>("http://localhost:8080/product/sales");
   }
 
 }

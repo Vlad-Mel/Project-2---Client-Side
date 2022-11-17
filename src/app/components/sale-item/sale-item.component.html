@@ -1,0 +1,9 @@
+<div class="box-shadow product" style="position: relative; display: inline-block; margin: 10px">
+    <img [src]="'/assets'+product.image_url" width="250px" height="250px">
+    <div class="infobox">
+        <h1>{{product.name}}</h1> 
+        <h2 class="normal_price"><s>${{product.normal_price}}</s></h2>
+        <h1>${{product.price}}!</h1>
+    </div>
+    <div [class.strobe]="strobe" [class.off]="!strobe">SALE</div>
+</div>
