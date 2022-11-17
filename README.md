@@ -1,5 +1,10 @@
 # Apparatus E-Commerce Site Frontend
 
+## Dependencies
+
+- Angular 14
+- Typescipt compiler
+
 ## Installation and Running Locally
 
 1. Clone the repository
