@@ -15,6 +15,8 @@ import { AppState } from "src/app/states/app.state";
 class NavigationComponent {
     public isAuthenticated$ = this.store.select(selectAuth);
 
+    cartAmount = 2;
+    displayAmount = this.cartAmount > 0 ? `after:content-['${this.cartAmount}']` : '';
     isSwitched = false;
 
     isLightMode = true;

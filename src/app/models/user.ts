@@ -17,4 +17,27 @@ export interface IUserRegistration {
     password: string
 }
 
+export interface IUpdateProfile {
+    firstName: string,
+    lastName: string,
+    gender: string,
+    dob: string,
+    email: string,
+    phoneNumber: string
+}
+
+export interface IProfile {
+    id: number,
+    phoneNumber: string,
+    gender: string,
+    dob: string,
+    user: {
+        firstName: string,
+        lastName: string,
+        email: string,
+        id: number,
+        encryptedPassword: string,
+        salt: string
+    }
+}
 
