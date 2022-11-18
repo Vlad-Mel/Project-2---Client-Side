@@ -52,8 +52,8 @@
 
     <p class="font-semibold my-2 mx-auto"
         [ngClass]="{
-            'text-green-600' : !hasError,
-            'text-red-500' : hasError
+            'text-green-600' : isUpdated,
+            'text-red-500' : hasError.oldPassword || hasError.newPassword || hasError.reenteredPassword
         }"
     >
         {{ message }}

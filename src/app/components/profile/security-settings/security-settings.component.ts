@@ -13,6 +13,7 @@ export class SecuritySettingsComponent {
     newPassword: false,
     reenteredPassword: false
   }
+  isUpdated!:boolean;
 
   isLoading = false;
 
@@ -27,6 +28,8 @@ export class SecuritySettingsComponent {
   })
 
   submit() {
+    this.isUpdated = false;
+
     if (this.form.value.newPassword !== this.form.value.reenteredPassword) {
       this.hasError = {...this.hasError, newPassword: true, reenteredPassword: true}
       this.message = "The passwords do not match. Try again."
@@ -41,12 +44,12 @@ export class SecuritySettingsComponent {
       newPassword: this.form.value.newPassword as string
     }).subscribe({
       next: response => {
-        console.log(response)
+        this.isUpdated = true;
+        this.message = response.message;
       },
       error: error => {
         this.hasError = {...this.hasError, oldPassword: true};
         this.message = error.error;
-        console.log(error)
       }
     })
 
