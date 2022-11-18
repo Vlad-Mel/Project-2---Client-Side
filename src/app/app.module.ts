@@ -30,12 +30,13 @@ import { ShippingDetailsComponent } from './components/profile/shipping-details/
 import { CartPageComponent } from './pages/cart-page/cart-page.component';
 import { CartContainerComponent } from './components/cart-container/cart-container.component';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
+import { ProductPageComponent } from './pages/product-page/product-page.component';
+import { ProductComponent } from './product/product.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { SearchItemComponent } from './components/search-item/search-item.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { SalesComponent } from './components/sales/sales.component';
 import { SaleItemComponent } from './components/sale-item/sale-item.component';
-
 
 @NgModule({
   declarations: [
@@ -62,6 +63,8 @@ import { SaleItemComponent } from './components/sale-item/sale-item.component';
     CartPageComponent,
     CartContainerComponent,
     CartItemComponent,
+    ProductPageComponent,
+    ProductComponent,
     SearchPageComponent,
     SearchItemComponent,
     SearchResultsComponent,

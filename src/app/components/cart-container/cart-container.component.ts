@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
+import { AuthService } from 'src/app/services/auth.service';
 import { IProduct } from 'src/app/models/product';
 
 @Component({
@@ -16,7 +17,7 @@ export class CartContainerComponent implements OnInit {
   @Input() userItems: string[] = [];
 
   ngOnInit(): void {
-    this.cartService.fetchCart().subscribe( products => {
+    this.cartService.fetchCart(AuthService.getUser().id).subscribe( products => {
       this.products=products;
     })
   }

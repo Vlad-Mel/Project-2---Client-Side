@@ -14,8 +14,8 @@ export class CartService {
   
   products?: IProduct[];
 
-  fetchCart(): Observable<IProduct[]> {
-    return this.httpClient.get<IProduct[]>("http://localhost:8080/cart/find/{user_id}")
+  fetchCart(user_id: number): Observable<IProduct[]> {
+    return this.httpClient.get<IProduct[]>("http://localhost:8080/cart/find/" + user_id)
   }
 
 }
