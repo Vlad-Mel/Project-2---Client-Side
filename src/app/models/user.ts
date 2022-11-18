@@ -41,3 +41,7 @@ export interface IProfile {
     }
 }
 
+export interface IChangePassword {
+    oldPassword: string,
+    newPassword: string
+}
