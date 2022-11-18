@@ -14,6 +14,7 @@ export class CartContainerComponent implements OnInit {
 
   products?: IProduct[];
   userId?: number;
+  total?: number;
 
   @Input() userItems: string[] = [];
 
@@ -21,6 +22,9 @@ export class CartContainerComponent implements OnInit {
     this.userId = AuthService.getUser().id;
     this.cartService.fetchCart(AuthService.getUser().id).subscribe( products => {
       this.products=products;
+    })
+    this.cartService.getTotal(AuthService.getUser().id).subscribe( total => {
+      this.total = total;
     })
   }
 

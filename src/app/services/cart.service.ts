@@ -18,4 +18,8 @@ export class CartService {
     return this.httpClient.get<IProduct[]>("http://localhost:8080/cart/find/" + user_id)
   }
 
+  getTotal(user_id: number): Observable<number> {
+    return this.httpClient.get<number>("http://localhost:8080/cart/total/" + user_id)
+  }
+
 }

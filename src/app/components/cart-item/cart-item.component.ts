@@ -8,9 +8,9 @@ import { Input } from '@angular/core';
 })
 export class CartItemComponent implements OnInit {
 
-  @Input() name="";
-  @Input() price="";
-  @Input() image_url="";
+  @Input() name = "";
+  @Input() price!: number;
+  @Input() image_url = "";
 
   constructor() { }
 
