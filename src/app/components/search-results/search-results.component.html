@@ -1,4 +1,4 @@
 <div style="position: relative; top: 85px" *ngFor="let product of products">
-    <app-search-item [description]="product.description"  [name]="product.name" [image_url]="product.image_url"></app-search-item>
+    <app-search-item [description]="product.description"  [name]="product.name" [image_url]="product.image_url" [link_url]="'/product/'+product.id"></app-search-item>
 </div>
 <div style="position: relative; height: 200px;"></div>

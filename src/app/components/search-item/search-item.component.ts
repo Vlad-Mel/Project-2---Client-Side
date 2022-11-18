@@ -10,6 +10,7 @@ export class SearchItemComponent implements OnInit {
   @Input() name = ""; 
   @Input() image_url = ""; 
   @Input() description = ""; 
+  @Input() link_url = ""; 
 
   highlight: boolean = false;
 

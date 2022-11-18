@@ -11,6 +11,7 @@ export class BrowseItemComponent implements OnInit {
   
   @Input() name = ""; 
   @Input() image_url = ""; 
+  @Input() link_url = ""; 
 
   highlight: boolean = false;
 
