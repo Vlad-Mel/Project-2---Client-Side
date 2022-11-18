@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
-import { ILogin, IProfile, IUpdateProfile, IUser, IUserRegistration } from '../models/user';
+import { IChangePassword, ILogin, IProfile, IUpdateProfile, IUser, IUserRegistration } from '../models/user';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { AuthService } from './auth.service';
@@ -36,5 +36,9 @@ export class UserService {
 
   profile(): Observable<IProfile> {
     return this.http.get<IProfile>(`${this.url}/user/auth/profile`, {withCredentials: true})
+  }
+
+  changePassword(changePassword: IChangePassword): Observable<any> {
+    return this.http.post(`${this.url}/user/auth/change-password`, changePassword, { withCredentials: true })
   }
 }

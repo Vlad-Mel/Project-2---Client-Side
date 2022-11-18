@@ -14,9 +14,12 @@
     <input
         type="password"
         class="mt-0.5 w-full px-1 py-[2px] border border-solid border-gray-700/30 rounded-sm focus:outline-blue-200"
+        [ngClass]="{
+            'border-red-500': hasError.oldPassword
+        }"
         placeholder=""
         autocomplete="off"
-        formControlName="currentPassword"
+        formControlName="oldPassword"
     >
 
     <label class="text-gray-600/90 font-semibold mt-1">
@@ -26,8 +29,7 @@
         type="password"
         class="mt-0.5 w-full px-1 py-[2px] border border-solid border-gray-700/30 rounded-sm focus:outline-blue-200"
         [ngClass]="{
-            'border-gray-700/30': !hasError,
-            'border-red-500': hasError
+            'border-red-500': hasError.newPassword
         }"
         placeholder=""
         autocomplete="off"
@@ -39,10 +41,9 @@
     </label>
     <input
         type="password"
-        class="mt-0.5 w-full px-1 py-[2px] border border-solid rounded-sm focus:outline-blue-200"
+        class="mt-0.5 w-full px-1 py-[2px] border border-solid border-gray-700/30 rounded-sm focus:outline-blue-200"
         [ngClass]="{
-            'border-gray-700/30': !hasError,
-            'border-red-500': hasError
+            'border-red-500': hasError.reenteredPassword
         }"
         placeholder=""
         autocomplete="off"
