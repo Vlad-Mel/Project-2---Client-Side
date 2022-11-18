@@ -13,17 +13,15 @@ export class CartContainerComponent implements OnInit {
   constructor(private cartService: CartService) { }
 
   products?: IProduct[];
+  userId?: number;
 
   @Input() userItems: string[] = [];
 
   ngOnInit(): void {
+    this.userId = AuthService.getUser().id;
     this.cartService.fetchCart(AuthService.getUser().id).subscribe( products => {
       this.products=products;
     })
-  }
-
-  showCart(product: IProduct): void{
-    
   }
 
 }
