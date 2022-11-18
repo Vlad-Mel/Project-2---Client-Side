@@ -4,7 +4,6 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '../states/app.state';
 import { authLogin, authLogout } from '../states/auth/auth.actions';
-import { IUser } from '../models/user';
 
 interface customJwtPayload extends JwtPayload {
   user: any;
