@@ -40,6 +40,10 @@ img {
     float:right;
 }
 
+#notification{
+    float:right;
+}
+
 #addToCart{
     width: 100px;
 }
