@@ -1,0 +1,4 @@
+<ng-container *ngFor="let product of products">
+    <app-cart-item [name]="product.name" [price]="product.price" [image_url]="product.image_url"></app-cart-item>
+</ng-container>
+<div>Total: ${{total}}</div>

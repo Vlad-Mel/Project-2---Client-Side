@@ -27,6 +27,9 @@ import { SecuritySettingsComponent } from './components/profile/security-setting
 import { FooterComponent } from './components/footer/footer.component';
 import { MethodsOfPaymentComponent } from './components/profile/methods-of-payment/methods-of-payment.component';
 import { ShippingDetailsComponent } from './components/profile/shipping-details/shipping-details.component';
+import { CartPageComponent } from './pages/cart-page/cart-page.component';
+import { CartContainerComponent } from './components/cart-container/cart-container.component';
+import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
 import { ProductComponent } from './product/product.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
@@ -57,6 +60,9 @@ import { CheckoutPageComponent } from './pages/checkout-page/checkout-page.compo
     FooterComponent,
     MethodsOfPaymentComponent,
     ShippingDetailsComponent,
+    CartPageComponent,
+    CartContainerComponent,
+    CartItemComponent,
     ProductPageComponent,
     ProductComponent,
     SearchPageComponent,

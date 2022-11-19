@@ -10,6 +10,7 @@ import { ProductBrowsingPageComponent } from './pages/product-browsing-page/prod
 import { ProductPageComponent } from './pages/product-page/product-page.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { CheckoutPageComponent } from './pages/checkout-page/checkout-page.component';
+import { CartPageComponent } from './pages/cart-page/cart-page.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent},
@@ -24,10 +25,11 @@ const routes: Routes = [
       { path: 'shipping-details', component: MethodsOfPaymentComponent}
     ]},
 
-    {path: 'product/:id', component: ProductPageComponent},
-    {path: 'search', component: SearchPageComponent},
-    {path: 'checkout', component: CheckoutPageComponent}
-  ];
+  {path: 'checkout', component: CheckoutPageComponent},
+  { path: 'search', component: SearchPageComponent},
+  { path: 'cart', component: CartPageComponent, canActivate: [AuthGuard]},
+  { path: 'product/:id', component: ProductPageComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
