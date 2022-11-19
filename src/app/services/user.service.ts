@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
-import { ILogin, IUser, IUserRegistration } from '../models/user';
+import { IChangePassword, ILogin, IProfile, IUpdateProfile, IUser, IUserRegistration } from '../models/user';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { AuthService } from './auth.service';
@@ -28,5 +28,17 @@ export class UserService {
                       localStorage.clear();
                       this.authService.setToken = '';
                     });
+  }
+
+  updateProfile(profile: IUpdateProfile) : Observable<IProfile> {
+    return this.http.post<IProfile>(`${this.url}/user/auth/update-profile`, profile, {withCredentials: true})
+  }
+
+  profile(): Observable<IProfile> {
+    return this.http.get<IProfile>(`${this.url}/user/auth/profile`, {withCredentials: true})
+  }
+
+  changePassword(changePassword: IChangePassword): Observable<any> {
+    return this.http.post(`${this.url}/user/auth/change-password`, changePassword, { withCredentials: true })
   }
 }

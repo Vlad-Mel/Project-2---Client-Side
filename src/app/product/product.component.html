@@ -14,6 +14,7 @@
             <form id="cartmanager">
                 <input type="number" id="quantity" name="quantity" min="1" max="10" [(ngModel)]="value" />
                 <button (click)="addToCart()" id="addToCart">Add To Cart</button>
+                <span id = notification>{{cartText}}</span>
             </form>
         </div>
 

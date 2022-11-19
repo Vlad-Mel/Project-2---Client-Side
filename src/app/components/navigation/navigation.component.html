@@ -79,9 +79,13 @@
         
         
 
-        <a class="relative cart grid grid-flow-col auto-cols-max items-center border border-blue-300 px-4 py-1" routerLink="/cart">
-            <p>Checkout</p>
-            <img class="w-[30px]" src="/assets/icons/cart_icon.png" alt="Cart">
+        <a class="relative cart grid grid-flow-col auto-cols-max 
+                items-center border-[2px] border-blue-200 bg-blue-300 text-white font-semibold px-4 py-1 rounded-full
+                hover:border-white hover:bg-blue-500 hover:box-shadow transition-colors"
+            [ngClass]="displayAmount"
+            routerLink="/cart">
+            <p class="mr-1">Checkout</p>
+            <img class="w-[25px]" src="/assets/icons/Cart.svg" alt="Cart">
         </a>
     </span>
     

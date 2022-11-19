@@ -49,6 +49,7 @@
         <input
             class="w-full px-1 py-[2px] border border-solid border-gray-700/30 rounded-sm"
             type="date"
+            formControlName="dob"
         >
     </span>
 
@@ -77,6 +78,16 @@
     </span>
 
     <hr class="mt-4 col-span-2" />
+
+    <div class="py-1 text-center col-span-2 font-semibold "
+        *ngIf="isUpdated || hasError"
+        [ngClass]="{
+            'text-green-500' : isUpdated,
+            'text-red-500' : hasError
+        }"
+        >
+        {{ message }}
+    </div>
     
     <button
         type="submit"
