@@ -25,7 +25,7 @@ const routes: Routes = [
       { path: 'shipping-details', component: MethodsOfPaymentComponent}
     ]},
   { path: 'search', component: SearchPageComponent},
-  { path: 'cart', component: CartPageComponent},
+  { path: 'cart', component: CartPageComponent, canActivate: [AuthGuard]},
   { path: 'product/:id', component: ProductPageComponent},
 ];
 

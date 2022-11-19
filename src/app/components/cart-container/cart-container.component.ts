@@ -24,7 +24,7 @@ export class CartContainerComponent implements OnInit {
       this.products=products;
     })
     this.cartService.getTotal(AuthService.getUser().id).subscribe( total => {
-      this.total = total;
+      this.total = Math.round(total*100)/100;
     })
   }
 
