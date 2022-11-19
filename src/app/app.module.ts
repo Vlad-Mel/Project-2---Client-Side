@@ -32,8 +32,8 @@ import { ProductComponent } from './product/product.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { SearchItemComponent } from './components/search-item/search-item.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
-import { SalesComponent } from './components/sales/sales.component';
 import { SaleItemComponent } from './components/sale-item/sale-item.component';
+import { CheckoutPageComponent } from './pages/checkout-page/checkout-page.component';
 
 @NgModule({
   declarations: [
@@ -62,8 +62,8 @@ import { SaleItemComponent } from './components/sale-item/sale-item.component';
     SearchPageComponent,
     SearchItemComponent,
     SearchResultsComponent,
-    SalesComponent,
-    SaleItemComponent
+    SaleItemComponent,
+    CheckoutPageComponent
   ],
   imports: [
     BrowserModule,

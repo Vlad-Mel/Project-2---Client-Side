@@ -1,0 +1,21 @@
+<app-navigation></app-navigation>
+<div style="background-color: lightblue; text-align: center; margin: 100px; padding: 100px;">
+    <form >
+        <label for="street">Street Address: </label><br>
+        <input id="street" type="text" [(ngModel)]="street"><br>
+        <label for="city">City: </label><br>
+        <input id="city" type="text" [(ngModel)]="city"><br>
+        <label for="state">State: </label><br>
+        <input id="state" type="text" [(ngModel)]="state"><br>
+        <label for="zip">Zip Code: </label><br>
+        <input id="zip" type="text" [(ngModel)]="zip"><br>
+        <label for="card">Card Number: </label><br>
+        <input id="card" type="text" [(ngModel)]="card"><br>
+        <label for="cvv">CVV: </label><br>
+        <input id="cvv" type="text" [(ngModel)]="cvv"><br>
+        <label for="date">Expiration Date: </label><br>
+        <input id="date" type="text" [(ngModel)]="date"><br>
+        <input id="submit" type="button" value="Confirm and submit order.">
+    </form>
+</div>
+<app-footer></app-footer>

@@ -7,9 +7,9 @@ import { AuthGuard } from './guards/auth.guard';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { ProductBrowsingPageComponent } from './pages/product-browsing-page/product-browsing-page.component';
-import { ProductComponent } from './product/product.component';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
+import { CheckoutPageComponent } from './pages/checkout-page/checkout-page.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent},
@@ -25,7 +25,9 @@ const routes: Routes = [
     ]},
 
     {path: 'product/:id', component: ProductPageComponent},
-    {path: 'search', component: SearchPageComponent}];
+    {path: 'search', component: SearchPageComponent},
+    {path: 'checkout', component: CheckoutPageComponent}
+  ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
