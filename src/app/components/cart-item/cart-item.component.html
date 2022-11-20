@@ -1,10 +1,10 @@
-<div class="container">
+<div class="container" style="padding: 20px">
     <div class="image">
-        <img [src]="'/assets'+image_url" width="200px" height="200px">
+        <img [src]="'/assets'+image_url" width="150px" height="150px">
     </div>
-    <div class="text">
-        <h1>Name: {{name}}</h1>
-        <h1>Price: ${{price}}</h1>
+    <div class="text" style="text-align: left;">
+        <h1>{{name}}</h1>
+        <h2>{{price|currency}}</h2>
         <h1>Quantity: {{quantity}}</h1>
     </div>
 </div>

@@ -22,4 +22,8 @@ export class CartService {
     return this.httpClient.get<number>("http://localhost:8080/cart/total/" + user_id)
   }
 
+  clearCart(user_id: number): Observable<number> {
+    return this.httpClient.delete<number>("http://localhost:8080/cart/clear/" + user_id)
+  }
+
 }

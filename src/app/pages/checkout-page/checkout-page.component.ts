@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-checkout-page',
@@ -15,9 +17,19 @@ export class CheckoutPageComponent implements OnInit {
   cvv?: Number;
   date?: String;
 
-  constructor() { }
+  total?: number;
+
+  submitted: boolean = false;
+
+  constructor(private cart: CartService) { }
 
   ngOnInit(): void {
+    this.cart.getTotal(AuthService.getUser().id).subscribe( total => this.total = total)
+  }
+
+  submitOrder(): void {
+    this.submitted=true;
+    this.cart.clearCart(AuthService.getUser().id).subscribe();
   }
 
 }
