@@ -1,11 +1,11 @@
 <div class="container" style="padding: 20px">
     <div class="image">
-        <img [src]="'/assets'+image_url" width="150px" height="150px">
+        <img class="rounded-md" [src]="'/assets'+image_url" width="150px" height="150px">
     </div>
     <div class="text" style="text-align: left;">
         <h1>{{name}}</h1>
         <h2>{{price|currency}}</h2>
-        <h1>Quantity: {{quantity}}</h1>
+        <h1>Quantity: x{{quantity}}</h1>
     </div>
 </div>
 

@@ -1,23 +1,42 @@
 <app-navigation></app-navigation>
 <div style="display: flex; justify-content: center; min-height: 600px;">
-<div style="background-color: lightblue; text-align: left; margin: 50px; padding: 100px;">
+<div class="rounded" style="background-color: lightblue; text-align: left; margin: 50px; padding: 50px 100px 50px;">
+    <h1 class="text-center text-3xl font-bold text-cyan-800 tracking-wider font-russoOne mb-5">Checkout</h1>
     <form *ngIf="!submitted">
-        <label for="street">Street Address: </label><br>
-        <input name="street" type="text" [(ngModel)]="street"><br>
-        <label for="city">City: </label><br>
-        <input name="city" type="text" [(ngModel)]="city"><br>
-        <label for="state">State: </label><br>
-        <input name="state" type="text" [(ngModel)]="state"><br>
-        <label for="zip">Zip Code: </label><br>
-        <input name="zip" type="text" [(ngModel)]="zip"><br>
-        <label for="card">Card Number: </label><br>
-        <input name="card" type="text" [(ngModel)]="card"><br>
-        <label for="cvv">CVV: </label><br>
-        <input name="cvv" type="text" [(ngModel)]="cvv"><br>
-        <label for="date">Expiration Date: </label><br>
-        <input name="date" type="text" [(ngModel)]="date"><br>
-        <h1>Total: {{total|currency}}</h1>
-        <input name="submit" type="button" (click)="submitOrder()" value="Confirm and submit order." style="background-color: darkblue; color: white; padding: 4px;">
+        <label class="text-gray-600 font-semibold" for="street">Street Address: </label><br>
+        <input class="w-full px-1 py-[2px] border border-solid border-gray-700/30 focus:outline-none rounded" 
+               name="street" type="text" [(ngModel)]="street"><br>
+
+        <label class="text-gray-600 font-semibold" for="city">City: </label><br>
+        <input class="w-full px-1 py-[2px] border border-solid border-gray-700/30 focus:outline-none rounded" 
+               name="city" type="text" [(ngModel)]="city"><br>
+
+        <label class="text-gray-600 font-semibold" for="state">State: </label><br>
+        <input class="w-full px-1 py-[2px] border border-solid border-gray-700/30 focus:outline-none rounded" 
+               name="state" type="text" [(ngModel)]="state"><br>
+
+        <label class="text-gray-600 font-semibold" for="zip">Zip Code: </label><br>
+        <input class="w-full px-1 py-[2px] border border-solid border-gray-700/30 focus:outline-none rounded" 
+               name="zip" type="text" [(ngModel)]="zip"><br>
+
+        <label class="text-gray-600 font-semibold" for="card">Card Number: </label><br>
+        <input class="w-full px-1 py-[2px] border border-solid border-gray-700/30 focus:outline-none rounded" 
+               name="card" type="text" [(ngModel)]="card"><br>
+
+        <label class="text-gray-600 font-semibold" for="cvv">CVV: </label><br>
+        <input class="w-full px-1 py-[2px] border border-solid border-gray-700/30 focus:outline-none rounded" 
+               name="cvv" type="text" [(ngModel)]="cvv"><br>
+
+        <label class="text-gray-600 font-semibold" for="date">Expiration Date: </label><br>
+        <input class="w-full px-1 py-[2px] border border-solid border-gray-700/30 focus:outline-none rounded" 
+               name="date" type="text" [(ngModel)]="date"><br>
+
+        <h1 class="text-center text-lg mt-2 "><span class="font-semibold">Total:</span> {{total|currency}}</h1>
+
+        <input name="submit" type="button" (click)="submitOrder()" value="Confirm and submit order."
+            class="mt-3 bg-blue-400 px-4 py-2 rounded-lg font-semibold tracking-wide hover:bg-blue-600 transition-colors" 
+            style="color: white;"
+        >
     </form>
     <div>
         <h1 *ngIf="submitted">Order Submitted!</h1>

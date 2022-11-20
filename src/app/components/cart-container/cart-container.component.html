@@ -6,12 +6,17 @@
 <div>Total: ${{total}}</div>-->
 
 <div class = "page">
-    <div id="wrapper" style="background-color: lightblue; padding: 20px; text-align: center; margin: 50px;">
+    <div class="rounded-md" id="wrapper" style="padding: 20px 20px 30px; text-align: center; margin: 50px; background-color: lightblue;">
+        <h1 class="text-center font-bold text-cyan-800 tracking-wider font-russoOne" style="font-size: 27px;">My Cart</h1>
         <ng-container *ngFor="let product of (products | keyvalue)">
             <app-cart-item [name]="product.key.name" [price]="product.key.price" [image_url]="product.key.image_url" [quantity]="product.value">
             </app-cart-item>
         </ng-container>
-        <h1>Total: {{total| currency}}</h1>
-        <a href="/checkout" id="addToCart" style="background-color:darkblue; color: white; padding: 4px; text-align: center;">Proceed to Checkout</a>
+        <h1 class="mb-4">Total: {{total| currency}}</h1>
+        <a href="/checkout" 
+            class="bg-blue-400 px-5 py-2.5 rounded-lg font-semibold tracking-wide hover:bg-blue-600 transition-colors"
+            id="addToCart" 
+            style="color: white; text-align: center;"
+        >Proceed to Checkout</a>
     </div>
 </div>
