@@ -1,0 +1,46 @@
+h1 {
+    text-align: center;
+    font-size: 15pt;
+    font-weight: bold;   
+}
+
+img {
+    border : solid 3px grey;
+    width: 100%;
+    margin: 2%;
+    display:inline;
+}
+
+#img{
+    margin:2%
+}
+
+#information{
+    border: solid 3px grey;
+    width: 100%;
+    margin: 2%;
+    background-color: #E5E7EB;
+}
+
+#information p{
+    font-size: 24pt;
+    float: left;
+    width: 75%;
+}
+
+#price{
+    font-size: 24pt;
+    text-align: right;
+}
+
+#price span{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.page{
+    min-height: 59vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
