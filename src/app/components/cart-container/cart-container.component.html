@@ -1,4 +1,17 @@
-<ng-container *ngFor="let product of products">
-    <app-cart-item [name]="product.name" [price]="product.price" [image_url]="product.image_url"></app-cart-item>
+<!--<ng-container *ngFor="let product of products">
+    <app-cart-item [name]="product.name" [price]="product.price" [image_url]="product.image_url">
+        
+    </app-cart-item>
 </ng-container>
-<div>Total: ${{total}}</div>
+<div>Total: ${{total}}</div>-->
+
+<div class = "page">
+    <div id="wrapper">
+        <ng-container *ngFor="let product of (products | keyvalue)">
+            <app-cart-item [name]="product.key.name" [price]="product.key.price" [image_url]="product.key.image_url" [quantity]="product.value">
+            </app-cart-item>
+        </ng-container>
+        <h1>Total: ${{total}}</h1>
+    </div>
+    <!--<button (click)="toToCheckout()" id="addToCart">Proceed to Checkout</button>-->
+</div>

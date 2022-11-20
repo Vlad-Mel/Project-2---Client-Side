@@ -11,6 +11,7 @@ export class CartItemComponent implements OnInit {
   @Input() name = "";
   @Input() price!: number;
   @Input() image_url = "";
+  @Input() quantity!: number;
 
   constructor() { }
 
