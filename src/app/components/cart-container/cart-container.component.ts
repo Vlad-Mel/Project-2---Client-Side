@@ -14,7 +14,7 @@ export class CartContainerComponent implements OnInit {
 
   products?: Map<IProduct, number>;
   userId?: number;
-  total?: number;
+  total?: String;
 
   @Input() userItems: string[] = [];
 
@@ -54,7 +54,7 @@ export class CartContainerComponent implements OnInit {
       this.products=map;
     })
     this.cartService.getTotal(AuthService.getUser().id).subscribe( total => {
-      this.total = Math.round(total*100)/100;
+      this.total = (Math.round(total*100)/100).toFixed(2);
     })
   }
 
